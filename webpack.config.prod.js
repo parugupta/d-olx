@@ -91,7 +91,7 @@ module.exports = {
   },
   "output": {
     "path": path.join(process.cwd(), "dist"),
-    "publicPath": "/ddmumbai/dolx/",
+    "publicPath": "/",
     "filename": "[name].bundle.js",
     "chunkFilename": "[id].chunk.js"
   },
@@ -442,7 +442,7 @@ module.exports = {
     }),
     new webpack.DefinePlugin({
       '__NODE_ENV__': JSON.stringify('production'),
-      '__BASE_URL__': JSON.stringify('/ddmumbai/dolx/')
+      '__BASE_URL__': JSON.stringify('/')
     })
   ],
   "node": {
