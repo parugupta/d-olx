@@ -1,0 +1,25 @@
+.footer {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    height: 51px;
+    font-size: 14px;
+    background-color: #4a4a4a;
+    line-height: 17px;
+    color: #f4f4f4;
+    text-align: center;
+    padding: 18px 0 16px 0;
+    z-index: 100000;
+  
+    @media only screen and (max-width: 768px) {
+      font-size: 12px;
+      height: 45px;
+      background-color: #9b9b9b;
+      padding: 14px 0;
+    }
+  
+    p {
+      margin: 0;
+    }
+  }
+  
