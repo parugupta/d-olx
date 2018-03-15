@@ -7,10 +7,12 @@ import { MatInputModule, MatIconModule } from '@angular/material';
 
 import { routing } from './app.routes';
 
+// Containers
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './containers/dashboard/dashboard.component';
 import { DemoComponent } from './containers/demo/demo.component';
 
+// Components
 import { FooterComponent } from './components/footer/footer.component';
 import { InputComponent } from './components/input/input-clearable.component';
 

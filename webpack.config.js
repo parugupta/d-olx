@@ -6,6 +6,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 const postcssUrl = require('postcss-url');
 const cssnano = require('cssnano');
+const WebpackBrowserPlugin = require('webpack-browser-plugin');
 
 const webpack = require('webpack');
 const { NoEmitOnErrorsPlugin, SourceMapDevToolPlugin, NamedModulesPlugin } = require('webpack');
@@ -16,7 +17,7 @@ const { AotPlugin } = require('@ngtools/webpack');
 const nodeModules = path.join(process.cwd(), 'node_modules');
 const realNodeModules = fs.realpathSync(nodeModules);
 const genDirNodeModules = path.join(process.cwd(), 'src', '$$_gendir', 'node_modules');
-const entryPoints = ["inline","polyfills","sw-register","styles","vendor","main"];
+const entryPoints = ["inline","polyfills","sw-register","styles","custom-am-charts","vendor","main"];
 const minimizeCss = false;
 const baseHref = "";
 const deployUrl = "";
@@ -91,6 +92,7 @@ module.exports = {
   },
   "output": {
     "path": path.join(process.cwd(), "dist"),
+    // "publicPath": "/ddmumbai/ciscodnac/",
     "filename": "[name].bundle.js",
     "chunkFilename": "[id].chunk.js"
   },
@@ -347,6 +349,7 @@ module.exports = {
     ]
   },
   "plugins": [
+    new WebpackBrowserPlugin(),
     new webpack.DefinePlugin({
       '__NODE_ENV__': JSON.stringify('development'),
       '__BASE_URL__': JSON.stringify('/')
