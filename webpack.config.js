@@ -6,6 +6,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 const postcssUrl = require('postcss-url');
 const cssnano = require('cssnano');
+const WebpackBrowserPlugin = require('webpack-browser-plugin');
 
 const webpack = require('webpack');
 const { NoEmitOnErrorsPlugin, SourceMapDevToolPlugin, NamedModulesPlugin } = require('webpack');
@@ -347,6 +348,7 @@ module.exports = {
     ]
   },
   "plugins": [
+    new WebpackBrowserPlugin(),
     new webpack.DefinePlugin({
       '__NODE_ENV__': JSON.stringify('development'),
       '__BASE_URL__': JSON.stringify('/')

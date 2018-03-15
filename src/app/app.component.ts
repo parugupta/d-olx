@@ -12,11 +12,11 @@ export class AppComponent {
   baseURL: string;
   
   constructor(private iconReg: MatIconRegistry, sanitizer: DomSanitizer) {
-    // if(__NODE_ENV__ == "production"){
-    //   this.baseURL = __BASE_URL__;
-    // }else{
-    //   this.baseURL = "./";
-    // }
-	  // iconReg.addSvgIcon('arrow', sanitizer.bypassSecurityTrustResourceUrl(this.baseURL+'./assets/images/arrow.svg'));
+    if(__NODE_ENV__ == "production"){
+      this.baseURL = __BASE_URL__;
+    }else{
+      this.baseURL = "./";
+    }
+	  iconReg.addSvgIcon('arrow', sanitizer.bypassSecurityTrustResourceUrl(this.baseURL+'./assets/images/arrow.svg'));
   }
 }
