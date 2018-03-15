@@ -17,7 +17,7 @@ const { AotPlugin } = require('@ngtools/webpack');
 const nodeModules = path.join(process.cwd(), 'node_modules');
 const realNodeModules = fs.realpathSync(nodeModules);
 const genDirNodeModules = path.join(process.cwd(), 'src', '$$_gendir', 'node_modules');
-const entryPoints = ["inline","polyfills","sw-register","styles","vendor","main"];
+const entryPoints = ["inline","polyfills","sw-register","styles","custom-am-charts","vendor","main"];
 const minimizeCss = false;
 const baseHref = "";
 const deployUrl = "";
@@ -92,6 +92,7 @@ module.exports = {
   },
   "output": {
     "path": path.join(process.cwd(), "dist"),
+    // "publicPath": "/ddmumbai/ciscodnac/",
     "filename": "[name].bundle.js",
     "chunkFilename": "[id].chunk.js"
   },
